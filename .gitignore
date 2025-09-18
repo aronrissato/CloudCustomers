@@ -1,0 +1,7 @@
+.idea/
+bin/
+obj/
+CloudCustomers.API/obj
+CloudCustomers.API/bin
+CloudCustomers.UnitTests/obj
+CloudCustomers.UnitTests/bin
