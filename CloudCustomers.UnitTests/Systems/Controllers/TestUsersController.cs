@@ -17,7 +17,19 @@ public class TestUsersController
         var mockUserService = new Mock<IUsersService>();
         mockUserService
             .Setup(service => service.GetAllUsers())
-            .ReturnsAsync(new List<User>());
+            .ReturnsAsync(new List<User>
+            {
+                new()
+                {
+                    Id = 1,
+                    Name = "Aron Rissato",
+                    Address = new Address
+                    {
+                        City = "Curitiba", Street = "Padre Antonio", ZipCode = "80000000"
+                    },
+                    Email = "aron_rissato@email.com"
+                }
+            });
 
         var sut = new UsersController(mockUserService.Object);
 
@@ -56,35 +68,48 @@ public class TestUsersController
 
         mockUserService
             .Setup(service => service.GetAllUsers())
-            .ReturnsAsync(new List<User>());
+            .ReturnsAsync(new List<User>
+            {
+                new()
+                {
+                    Id = 1,
+                    Name = "Aron Rissato",
+                    Address = new Address
+                    {
+                        City = "Curitiba", Street = "Padre Antonio", ZipCode = "80000000"
+                    },
+                    Email = "aron_rissato@email.com"
+                }
+            });
 
         var sut = new UsersController(mockUserService.Object);
-        
+
         //Act
         var result = await sut.Get();
-        
+
         //Assert
         result.Should().BeOfType<OkObjectResult>();
         var objectResult = (OkObjectResult)result;
         objectResult.Value.Should().BeOfType<List<User>>();
     }
-    
+
     [Fact]
     public async Task Get_OnNoUsersFound_Returns404()
     {
         //Arrange
         var mockUserService = new Mock<IUsersService>();
-        
+
         mockUserService.Setup(service => service.GetAllUsers())
             .ReturnsAsync(new List<User>());
-        
+
         var sut = new UsersController(mockUserService.Object);
-        
+
         // Act
         var result = await sut.Get();
-        
+
         // Assert
         result.Should().BeOfType<NotFoundResult>();
+        var objectResult = (NotFoundResult)result;
+        objectResult.StatusCode.Should().Be(404);
     }
-
 }
