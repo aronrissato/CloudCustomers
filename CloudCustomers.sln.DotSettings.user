@@ -4,5 +4,6 @@
     &lt;TestId&gt;xUnit::834B52D6-48E0-4C47-894A-B19D783EA76D::net6.0::CloudCustomers.UnitTests.Systems.Controllers.TestUsersController&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::834B52D6-48E0-4C47-894A-B19D783EA76D::net6.0::CloudCustomers.UnitTests.Systems.Services.TestUsersService.GetAllUsers_WhenCalled_InvokesHttpGetRequest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::834B52D6-48E0-4C47-894A-B19D783EA76D::net6.0::CloudCustomers.UnitTests.Systems.Services.TestUsersService.GetAllUsers_WhenCalled_ReturnsListOfUsersOfExpectedSize&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::834B52D6-48E0-4C47-894A-B19D783EA76D::net6.0::CloudCustomers.UnitTests.Systems.Services.TestUsersService&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
